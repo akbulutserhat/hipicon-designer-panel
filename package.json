@@ -25,8 +25,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start && json-server --watch db.json",
-    "build": "react-scripts build && json-server --watch db.json",
+    "start": "react-scripts start && json-server db.json",
+    "build": "react-scripts build && json-server db.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
