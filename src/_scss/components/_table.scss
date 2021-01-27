@@ -1,0 +1,172 @@
+.table-container {
+    background-color: $black-light;
+    box-shadow: 0 0 30px 2px rgba($electric-green,0.5);
+    border-radius: 8px;
+    padding:0 10px;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    .table-header {
+        padding:18px 10px;
+
+        .dropdown-label {
+            color:$gray;
+            font-style: italic;
+        }
+    }
+
+    .styled-table {
+        font-size:13px;
+        width: 100%;
+
+        i {
+            cursor: pointer;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+
+            &:nth-of-type(2) {
+                cursor:pointer;
+            }
+
+            .checkbox-label {
+                display: block;
+                position: relative;
+                margin: auto;
+                cursor: pointer;
+                font-size: 15px;
+                line-height: 16px;
+                height: 16px;
+                width: 16px;
+                clear: both;
+
+                input {
+                
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                .checkbox-custom {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    height: 16px;
+                    width: 16px;
+                    background-color: transparent;
+                    border-radius: 5px;
+                    transition: all 0.3s ease-out;
+                    border: 2px solid darken($gray,50);
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        left: 8px;
+                        top: 8px;
+                        height: 0px;
+                        width: 0px;
+                        transform: rotate(0deg) scale(0);
+                        opacity:1;
+                        transition: all 0.3s ease-out;
+                    }
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: 10px;
+                        top: 10px;
+                        width: 0px;
+                        height: 0px;
+                        border: 2px solid $electric-green;
+                        transform: scale(0);  
+                    }
+                    
+                }
+
+                input:checked ~ .checkbox-custom {
+                    background-color: $black;
+                    border-radius: 5px;
+                    transform: rotate(0deg) scale(1);
+                    opacity:1;
+                    border: 2px solid $black;
+
+                    &::after {
+                        transform: rotate(45deg) scale(1);
+                        opacity:1;
+                        left: 4px;
+                        top: 0;
+                        width: 6px;
+                        height: 12px;
+                        border: solid $electric-green;
+                        border-width: 0 2px 2px 0;
+                        background-color: transparent;
+                        border-radius: 0;
+                      }
+
+
+                      &::before {
+                        left: -3px;
+                        top: -3px;
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 5px;
+                        transform: scale(3);
+                        opacity:0;
+                        z-index: 999;
+                        transition: all 0.3s ease-out;
+
+                    }  
+                }
+            }
+        }
+    
+        thead {
+            tr {
+                background-color:darken($black-light,3);
+                color: $electric-green;
+            }
+        }
+    
+        tbody {
+            color:$gray;
+            
+            tr {
+                &:last-of-type {
+                    border-bottom: 2px solid darken($black-light,3)
+                }
+                
+            }
+        }
+    }
+
+    .table-footer {
+        padding:18px 30px 18px 18px;
+        color:$gray;
+
+       
+
+        strong {
+            color:$electric-green;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            background: transparent;
+            color:$white;
+            font-weight: bold;
+            cursor: pointer;
+            padding:0 3px;
+            &:disabled {
+                color:darken($gray,50);
+                cursor: default;
+            }
+        }
+    }
+    
+    
+
+}
+

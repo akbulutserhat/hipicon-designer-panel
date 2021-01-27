@@ -1,0 +1,95 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $black;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+ul,ol {
+  padding-inline-start: 0;
+}
+
+ul  li {
+  list-style: none;
+}
+
+ol { 
+  counter-reset: item;
+  list-style-type: none;
+
+  li:before { 
+    content: counter(item) "  "; 
+    counter-increment: item 
+  }
+}
+
+a{
+  text-decoration: none;
+  letter-spacing: 0.07rem;
+  cursor: pointer;
+  color:$white;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active, &:focus {
+      outline: 0;
+      border: none;
+    }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px $electric-green;
+  border-radius: 0;
+  
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $black;
+  border-radius: 0;
+  
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+}
+
+select {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid darken($gray,50);
+  border-radius: 5px;
+  color:$electric-green;
+  cursor: pointer;
+
+  option {
+      background-color: $black-light;
+  }
+}
+

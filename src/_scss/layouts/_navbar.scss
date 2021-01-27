@@ -1,0 +1,85 @@
+.custom-navbar {
+    display:flex;
+    flex-direction: column;
+    background-color: $black-light;
+    padding:15px 15px 15px 25px;
+    width: 260px;
+    height: 100%;
+
+    .logo-title-wrapper {
+        
+        margin-bottom:25px;
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .title-wrapper {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        font-size: 17px;
+        
+        color:$white;
+
+        a {
+            color:$white;
+        }
+        
+
+        small {
+            font-size: 9px;
+        }
+    }
+
+    .list-wrapper {
+        display: flex;
+        padding:0;
+        flex-direction: column;
+        text-transform:capitalize;
+        font-size: 13px;
+
+        li {
+            padding:12px 8px;
+        }
+
+        i {
+            margin-right: 20px;
+        }
+
+        a,i {
+            color:$gray;
+        }
+
+        a.active {
+            border-bottom:2px solid $electric-green;
+        }
+        
+        
+    }
+}
+
+// For mobile navigation
+.mobile-navbar {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: $black-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mobile-list {
+        font-size:20px;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+
+        li {
+            padding:10px;
+        }
+    }
+}

@@ -1,0 +1,106 @@
+// Login page card
+.login-page-card {
+
+    width:380px;
+    height: 340px;
+    background-color: transparent;
+    border-radius: 3px;
+    border:2px solid $black;
+    padding: 20px;
+    .inline {
+        padding:20px;
+        background-color: $black-light;
+        border-radius: 3px;
+        box-shadow: 0 0 5px 5px $black,
+                    0 0 40px 40px rgba($electric-green,0.1);
+
+        
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        p {
+            font-size:16px;
+        }
+    }
+    
+}
+
+// For dashboard cards style
+.custom-card {
+    border-radius: 8px;
+    height:256px;
+    box-shadow: 0 0 20px 5px darken($black-light,2);
+
+    .custom-card-header {
+        span {
+            font-weight: bold;
+            font-size:26px;
+        }
+        small {
+            font-size:10px;
+        }
+    }
+
+    .custom-card-body { 
+        ol,ul {
+            li:nth-child(-n+3) {
+                color:$white;
+            }
+            li {
+                font-size:13px;
+                font-weight: normal;
+                line-height: 2;
+                color:$gray;
+                .list-item {
+                    width: 91%;
+                }
+            }
+        }
+
+        ul {
+          
+            li {
+                list-style: disc outside none;
+                display: list-item;
+            }
+
+            @for $i from 1 through length($pieColors) {
+                li:nth-child(#{length($pieColors)}n+#{$i}) {
+                    &::marker {
+                        color:#{nth($pieColors,$i)}
+                    }
+                }
+            }
+
+           
+        }
+    }
+
+    hr {
+        margin:0;
+        border-top:2px solid rgba($black,.6)
+    }
+
+    &__dark-background {
+        background-color: $black-light;
+
+        .recharts-bar {
+            path {
+                fill: $electric-green
+              }
+        }
+        
+          
+    }
+
+    &__green-background {
+        background: linear-gradient(.25turn,rgba($electric-green,0.7) 65%,$electric-green 35%);
+        path {
+            fill: transparent
+          }
+          
+    }
+}
+
