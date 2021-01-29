@@ -1,0 +1,7 @@
+3rd Components
+- Bootstrap
+- Redux
+- node-sass
+- react-table
+- recharts
+- json-server

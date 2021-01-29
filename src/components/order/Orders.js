@@ -37,7 +37,7 @@ const Orders = ({searchColumn,searchText}) => {
       setPageCount(Math.ceil(totalCount / pageSize))
     },[dispatch,totalCount,page,pageCount,pageSize,filter,searchColumn,searchText])
 
-    const columns = Object.keys(orders[0] ? orders[0]:{wait:'wait'}).map((key, id)=>{
+    const columns = Object.keys(orders[0] ? orders[0]:{notFound:'Not Found'}).map((key, id)=>{
       return {
         Header: key,
         accessor: key

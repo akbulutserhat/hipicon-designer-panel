@@ -130,7 +130,7 @@
       "id": 1,
       "name": "Product Name",
       "quantity": 3,
-      "price": 90,
+      "price": 1212,
       "status": "deliver upon order",
       "delivery_time": 4,
       "sold": 4

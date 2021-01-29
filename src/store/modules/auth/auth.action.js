@@ -7,14 +7,15 @@ export const SignIn = (credentials) => {
     return async  (dispatch) => {
       dispatch({ type: authTypes.LOGIN_REQUEST }) 
       try {
-        const res =  await fetch(`${API_ROUTE}/auth/login/`,{
+        const res =  await fetch(`${API_ROUTE}/user/login`,{
           method: 'POST',
           headers: {
               "Content-type": "application/json"
           },
           body: JSON.stringify(credentials)
-      })
-        let token = res.data.token        
+        })
+        let data = res.json()
+        let token = data.token        
         dispatch({ type: authTypes.LOGIN_SUCCESS, payload: token })
       } catch(err) {
         dispatch({ type: authTypes.AUTH_ERROR, payload: err.response })

@@ -51,7 +51,7 @@ const Products = ({searchColumn,searchText}) => {
     setOpenModal(false)
   }
 
-  const columns = Object.keys(products[0] ? products[0]:{wait:'wait'}).map((key, id)=>{
+  const columns = Object.keys(products[0] ? products[0]:{notFound:'Not Found'}).map((key, id)=>{
     return {
       Header: key,
       accessor: key
